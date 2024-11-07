@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTE É SÓ O COMEÇO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+    }
+    .question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .options {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ESTE É SÓ O COMEÇO</h1>
+
+  <!-- Primeira pergunta -->
+  <div id="question1" class="question">
+    <p>Quando você vai responder às mensagens de uma pessoa e ela começa a te mandar mensagens ao mesmo tempo, qual é o certo a se dizer?</p>
+    <div class="options">
+      <button class="btn" onclick="checkAnswer(1, 'incorrect')">Calma, estou respondendo</button>
+      <button class="btn" onclick="checkAnswer(1, 'correct')">CALMA TO RESPINGANDO</button>
+      <button class="btn" onclick="checkAnswer(1, 'incorrect')">Você poderia me dar um minuto pois irei responder o nosso diálogo?</button>
+    </div>
+  </div>
+
+  <!-- Segunda pergunta (inicialmente oculta) -->
+  <div id="question2" class="question hidden">
+    <p>De 0 a 10, quanto o Will.i.am gosta de você?</p>
+    <div class="options">
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">0</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">1</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">2</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">3</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">4</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">5</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">6</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">7</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">8</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">9</button>
+      <button class="btn" onclick="checkAnswer(2, 'incorrect')">10</button>
+      <button class="btn" onclick="checkAnswer(2, 'correct')">22</button>
+    </div>
+  </div>
+
+  <!-- Terceira pergunta (inicialmente oculta) -->
+  <div id="question3" class="question hidden">
+    <p>É possível encontrar ração de Lhama na Cobasi?</p>
+    <div class="options">
+      <button class="btn" onclick="checkAnswer(3, 'incorrect')">Sim</button>
+      <button class="btn" onclick="checkAnswer(3, 'incorrect')">Talvez em algumas Filiais</button>
+      <button class="btn" onclick="checkAnswer(3, 'incorrect')">Não</button>
+      <button class="btn" onclick="checkAnswer(3, 'incorrect')">Claro que não '--'</button>
+      <button class="btn" onclick="checkAnswer(3, 'correct')">Preciso perguntar para o Douglas!</button>
+      <button class="btn" onclick="checkAnswer(3, 'incorrect')">Lhama nem come ração mano!!!!</button>
+    </div>
+  </div>
+
+  <!-- Quarta pergunta (inicialmente oculta) -->
+  <div id="question4" class="question hidden">
+    <p>Qual é o melhor xis do mundo?</p>
+    <div class="options">
+      <button class="btn" onclick="checkAnswer(4, 'incorrect')">Frango</button>
+      <button class="btn" onclick="checkAnswer(4, 'incorrect')">Iscas</button>
+      <button class="btn" onclick="checkAnswer(4, 'incorrect')">Salada</button>
+      <button class="btn" onclick="checkAnswer(4, 'correct')">Não sei o que é a opção 2</button>
+      <button class="btn" onclick="checkAnswer(4, 'incorrect')">Bacon</button>
+    </div>
+  </div>
+
+  <!-- Quinta pergunta (inicialmente oculta) -->
+  <div id="question5" class="question hidden">
+    <p>Qual instrumento o pai do Juninho toca?</p>
+    <div class="options">
+      <button class="btn" onclick="checkAnswer(5, 'incorrect')">Baixo</button>
+      <button class="btn" onclick="checkAnswer(5, 'incorrect')">Guitarra</button>
+      <button class="btn" onclick="checkAnswer(5, 'correct')">Xilofone</button>
+      <button class="btn" onclick="checkAnswer(5, 'incorrect')">Bateria</button>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer(questionNumber, answer) {
+      if (answer === 'correct') {
+        // Se a resposta estiver correta
+        if (questionNumber === 1) {
+          // Mostra a segunda pergunta
+          document.getElementById('question1').classList.add('hidden');
+          document.getElementById('question2').classList.remove('hidden');
+        } else if (questionNumber === 2) {
+          // Mostra a terceira pergunta
+          document.getElementById('question2').classList.add('hidden');
+          document.getElementById('question3').classList.remove('hidden');
+        } else if (questionNumber === 3) {
+          // Mostra a quarta pergunta
+          document.getElementById('question3').classList.add('hidden');
+          document.getElementById('question4').classList.remove('hidden');
+        } else if (questionNumber === 4) {
+          // Mostra a quinta pergunta
+          document.getElementById('question4').classList.add('hidden');
+          document.getElementById('question5').classList.remove('hidden');
+        } else if (questionNumber === 5) {
+          // Se acertou a quinta pergunta, exibe a mensagem de sucesso
+          alert('Parabéns, você completou o primeiro passo, aguarde novas instruções no seu e-mail na quinta-feira às 10:22...Lembre-se ESTE É SÓ O COMEÇO!');
+        }
+      } else {
+        // Se a resposta estiver incorreta
+        alert('UEPAAAAAAAA Resposta errada hein. Tente novamente!');
+      }
+    }
+  </script>
+
+</body>
+</html>
